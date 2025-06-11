@@ -8,10 +8,13 @@ Quando toggle() viene chiamato, il valore passa da true → false e viceversa. *
 
 import useSwitch from "./Components/useSwitch"
 import useDate from "./Components/useDate"
+import useCustomPointer from "./Components/useCustomPointer"
+
 function App(){
 
   const [isOn, toggle] = useSwitch()
   const now = useDate()
+  const customPointer = useCustomPointer("🔥");
   return (
     <>
       <div className="container">
@@ -23,8 +26,11 @@ function App(){
         <h1>Date</h1>
         <p>Data e ora attuali</p>
         <p>{now.toLocaleString()}</p>
-
       </div>
+      <div className="container">
+      <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
+      {customPointer}
+    </div>
     </>
   )
 }
