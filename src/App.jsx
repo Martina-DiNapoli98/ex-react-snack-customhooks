@@ -11,7 +11,7 @@ import useDate from "./Components/useDate"
 function App(){
 
   const [isOn, toggle] = useSwitch()
-  const currentDate = useDate()
+  const now = useDate()
   return (
     <>
       <div className="container">
@@ -22,7 +22,7 @@ function App(){
       <div className="container">
         <h1>Date</h1>
         <p>Data e ora attuali</p>
-        <p>{currentDate}</p>
+        <p>{now.toLocaleString()}</p>
 
       </div>
     </>

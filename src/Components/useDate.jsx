@@ -9,11 +9,11 @@ export default function useDate(){
         setNow(new Date())
     }, 1000)
 
-    return clearInterval(interval)
+    return () =>{
+        clearInterval(interval)}
    }, [])
 
-   const date = now.toLocaleDateString()
-   const time = now.toLocaleTimeString()
+ 
 
-   return [date, time]
+   return [now]
 }
